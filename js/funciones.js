@@ -58,9 +58,3 @@ $("#entra")
 function setTwoNumberDecimal(event) {
   this.value = parseFloat(this.value).toFixed(3);
 }
-
-//imprimir
-function imprime(){
-  var element = document.getElementById('imprimir');
-html2pdf(element);
-}
