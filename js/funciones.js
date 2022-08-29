@@ -55,6 +55,6 @@ $("#entra")
   $("#dif").val($('#entra').val() - $('#sale').val());
 })
 .keyup();
-function setTwoNumberDecimal(event) {
+function setTwoNumberDecimal() {
   this.value = parseFloat(this.value).toFixed(3);
 }

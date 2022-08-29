@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="styles/styles.css" media="all">
     <link rel="stylesheet" href="styles/css/bootstrap.css" media="all">
     <link rel="stylesheet" href="styles/css/bootstrap-grid.css" media="all">
-    <!-- funciones js
-     -->
-    
+  <!-- imprimir -->
+      <!-- Normalize or reset CSS with your favorite library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  <!-- Load paper.css for happy printing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+
+  <!-- Set page size here: A5, A4 or A3 -->
+  <!-- Set also "landscape" if you need -->
+  <style>@page { size: A4 }</style>
 </head>
-<body>
-<div class="container" style="width:80%cm ;" id="imprimir">
+<body class="A4">
+<div class="container" id="imprimir">
     <form role="form" id="formulario" action="archivo.php">
       <div class="row">
         <div class="col-2" id="imagen">
@@ -39,7 +46,7 @@
           <label for="Sesion">Sesión:<input type="sesion" class="form-control" id="sesion" disabled ></label>
         </div>
         <div class="col">
-          <label for="dias_internacion">Días de internación:</label> <input type="date" name="internacion" id="internacion" class="form-control" ></label>
+          <label for="dias_internacion">Días de internación: <input type="date" name="internacion" id="internacion" class="form-control" ></label>
         </div>
       </div>
       <div class="row">
@@ -118,7 +125,7 @@
             <label for="">Acceso vascular</label>
           </div>
           <div class="row">
-            <div class="col select">
+            <div class="col select-">
               <label> Tipo de Acceso <select name="acceso" id="acceso" onchange="seleccionar()" class="form-control"> 
                 <option value="0">Seleccione</option>
                 <option value="1">Cateter</option>
@@ -233,8 +240,6 @@
         <div class="col">
           <label>Balance: <input type="number" step="0.1" id="dif" disabled onchange="setTwoNumberDecimal" class="form-control"></label>
         </div>
-
-
         <div class="col-2 select">
           <label>T° bomba: 
             <select name="tempBomba" id="tempBomba" class="form-control">
@@ -252,7 +257,7 @@
       </div>
       <div class="row">
         <div class="col-6">
-          <div class="row">
+          <div class="row" >
             <div class="col select">
               <label>Jeringas:
               <select name="jeringas" id="jeringas" class="form-control">
@@ -268,97 +273,143 @@
             <div class="col">
               <label>Agujas:<input type="text" name="agujas" id="agujas" class="form-control"></label>
             </div>
-            
           </div>
-          <div class="row" style="background-color: magenta;">
-            <label for="">Post diálisis</label>
-          </div> 
           <div class="row">
-            <div class="col-3 select">
-              <label>Oxigenoterapia:</label>
-              <select name="o2" id="o2" class="form-control">
-                <option value="1" selected>Sin oxígeno</option>
-                <option value="2">Cánula nasal</option>
-                <option value="3">Máscara reservorio</option>
-                <option value="4">VNI</option>
-                <option value="5">ARM</option>
-              </select>
+            <div class="col">Post diálisis</div>
+          </div>
+          <div class="row" >
+            <div class="col">
+              <input class="form-check-input" type="checkbox" value="1" id="ntg">
+              <label  for="ntg">NTG</label>
             </div>
             <div class="col">
-              <div class="row" style="background-color: rgb(204, 32, 32);">
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="1" id="ntg">
-                  <label  for="ntg">NTG</label>
-                </div>
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="2" id="nps">
-                  <label  for="nps">NPS</label>
-                </div>
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="3" id="dopa">
-                  <label  for="dopa">DOPA</label>
-                </div>
+              <input class="form-check-input" type="checkbox" value="2" id="nps">
+              <label  for="nps">NPS</label>
+            </div>
+            <div class="col">
+              <input class="form-check-input" type="checkbox" value="3" id="dopa">
+              <label  for="dopa">DOPA</label>
+            </div>       
+          </div>
+          <div class="row" >
+            <div class="col">
+              <input class="form-check-input" type="checkbox" value="4" id="nora">
+              <label  for="nora">NORA</label>
+            </div>
+            <div class="col">
+              <input class="form-check-input" type="checkbox" value="5" id="dabuta">
+              <label  for="dabuta">DABUTA</label>
+            </div>
+            <div class="col">
+              <input class="form-check-input" type="checkbox" value="6" id="atb">
+              <label  for="atb">ATB</label>
+            </div>
+              <!-- <div class="container " style="text-align: center;">
+
               </div>
-            </div>
-            <div class="col" style="background-color: red;">
-              <div class="row" style="background-color: rgb(204, 32, 32);">
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="4" id="nora">
-                  <label  for="nora">NORA</label>
+              <div class="container " style="text-align: center;">
+                <input class="form-check-input" type="checkbox" value="3" id="dopa">
+                <label  for="dopa">DOPA</label> 
+              </div>  -->
+          </div>
+          <!-- <div class="row">
+            <div class="col">
+              <div class="row">
+                <label>Oxigenoterapia:
+                  <select name="jeringas" id="jeringas" class="form-control-inline">
+                    <option value="1">1cc</option>
+                    <option value="5">5cc</option>
+                    <option value="10">10cc</option>
+                    <option value="20">20cc</option>
+                  </select></label>
                 </div>
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="5" id="dobu">
-                  <label  for="dobu">DOBUTA</label>
-                </div>
-                <div class="container " style="text-align: center;">
-                  <input class="form-check-input" type="checkbox" value="5" id="atb">
-                  <label  for="atb">ATB</label>
-                </div>
-              </div>
             </div>
-            </div>
+          </div> -->
         </div>
-        <div class="col-6" style="background-color:blue ;">
+        <div class="col-6" >
+          <!-- <div class="col-6"> -->
+            <div class="row">
+              <div class="col">Hora</div>
+              <div class="col">P. sist.</div>
+              <div class="col">P.diast.</div>
+              <div class="col">Glu</div>
+              <div class="col">S. sal</div>
+              <div class="col">ulf. hora</div>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
+              <div class="col">6</div>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
+              <div class="col">6</div>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
+              <div class="col">6</div>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
+              <div class="col">6</div>
+            </div>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
+              <div class="col">4</div>
+              <div class="col">5</div>
+              <div class="col">6</div>
+            </div>
+            <!-- <div class="row" style="background-color: blue;height: auto">
+              <div class="col" >
+                <textarea name="" id="" cols="45" rows="4" disabled></textarea>
+                <textarea name="" id="" cols="21" rows="4"></textarea>
+              </div>
+            </div> -->
+          <!-- </div> -->
+        </div>
+      </div> <!-- fin columna post-->
+      <div class="row">
+        <div class="col">
+          <label>Oxigenoterapia:
+            <select name="o2" id="o2" class="form-control">
+              <option value="1" selected>Sin oxígeno</option>
+              <option value="2">Cánula nasal</option>
+              <option value="3">Máscara reservorio</option>
+              <option value="4">VNI</option>
+              <option value="5">ARM</option>
+            </select></label>
+        </div>
+        <div class="col">
           <div class="row">
-            <label for="">Signos vitales</label>
-          </div>
-          <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
-            <div class="col">4</div>
-            <div class="col">5</div>
-          </div>
-          <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
-            <div class="col">4</div>
-            <div class="col">5</div>
-          </div>
-          <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
-            <div class="col">4</div>
-            <div class="col">5</div>
-          </div>
-          <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
-            <div class="col">4</div>
-            <div class="col">5</div>
-          </div>
-          <div class="row">
-            <div class="col">1</div>
-            <div class="col">2</div>
-            <div class="col">3</div>
-            <div class="col">4</div>
-            <div class="col">5</div>
+            <div class="col">
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="col">
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
           </div>
         </div>
       </div>
+      
+      <!-- pegado hasat aca -->
+
       
         <button type="submit" class="btn btn-default">Guardar</button> 
         <input type="reset" value="Limpiar" id="limpiar" >
