@@ -1,0 +1,45 @@
+/* .tg  {
+  border-collapse:separate;
+  border-spacing:0;
+} */
+.tg td{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font: size 10px;
+    overflow:auto;
+    padding:10px 5px;
+    word-break:break-word;
+    
+  }
+  .tg th{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+  }
+  /* .tg .tg-0lax{
+    text-align:left;
+    vertical-align:top;
+  } */
+  select{
+      
+      color: red;
+      justify-content: center;
+      width: 3.5cm;
+  }
+  input[type=number]{
+    width: 150px;
+  }
+  *{
+    font-size: 15px;
+  }
+  #edad{
+    width: 1.5cm;
+  }

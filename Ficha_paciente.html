@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="styles\styles.css">
+    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    
+    <!-- link estilos -->
+    <!-- <link rel="stylesheet" href="styles/colores.css"> -->
+    
+</head>
+<body>
+  <div class="container">
+    <form  name="RegistroPacientes" action="proceso.php" method="get" style="width: 19cm;">
+      <table class="table table-bordered" align="center">
+        <tbody>
+          <tr>
+           <td class="tg-0lax" colspan="3" rowspan="3"></td>
+            <td class="tg-0lax" colspan="3">Nomb. y Apellido <input type="text" name="nombre" id="nombre" style="width: 300px;"></td>
+            <td class="tg-0lax" colspan="2">Fecha: <input type="date" name="fecha" id="fecha"></td>
+            <td class="tg-0lax" colspan="2">N° sesión</td>
+            <td class="tg-0lax" colspan="2">Días de internación: <input type="date" name="internacion" id="internacion"></td>
+          </tr>
+          <tr>
+           <td class="tg-0lax" colspan="3">Sexo:           
+              <select name="sexo" id="sexo" >
+                <option value="defecto" selected>Seleccione sexo</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="1">Sobrevive:
+              <select name="sobrevive" id="sobrevive" style="width:50px ;">
+                <option value="sí">Sí</option>
+                <option value="no">No</option>
+              </select>
+
+            </td>
+            <td class="tg-0lax" colspan="2">Institución:
+              <select name="institucion" id="institucion">
+                <option value="hpriv">H. Privado</option>
+                <option value="cymin">CYMIN</option>
+                <option value="IMDJ">IMSJ</option>
+                <option value="ssj">SSJ</option>
+                <option value="otro">Otro</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="4">Prescripción de diálisis:
+              <select name="prescripcion" id="prescripcion" style="width:200px ;">
+                <option value="1">Hemodiálisis/Ultrafiltración</option>
+                <option value="2">Ultrafiltración</option>
+                <option value="3">Hemodiálisis</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="1">DNI N°: <input placeholder="Sin puntos" type="text" size="8" name="dni" id="dni" ></td>
+            <td class="tg-0lax" colspan="2">Edad: <input type="number" name="edad" id="edad"></td>
+            <td class="tg-0lax" colspan="2">Tpo. prescripto de diálisis: <input style="width:3cm ;" type="number" name="tpodialisis" id="tpodialisis">hs </td>
+            <td class="tg-0lax" colspan="2"> Inicio: <input style="width:2cm ;" type="number" name="inicio" id="inicio"> hs</td>
+            <td class="tg-0lax" colspan="2">Fin: <input style="width:2cm ;" type="number" name="fin" id="fin"> hs</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">Obra social: <input type="text" name="os" id="os"></td>
+                <td class="tg-0lax" colspan="2">N° afiliado: <br><input type="number" name="afiliado" id="afiliado"></td>
+                <td class="tg-0lax" colspan="2">Servicio: <select name="servicio" id="servicio">
+                  <option value="TIP">TIP</option>
+                  <option value="UCO">UCO</option>
+                  <option value="UTI">UTI</option>
+                </select>
+            </td>
+            <td colspan="6" rowspan="3">Reporte de incidente clínico <textarea name="reporte" id="reporte" cols="100" rows="6"></textarea></td>
+
+          </tr>
+          <tr>
+            <td colspan="6" align="center">Acceso Vascular</td></tr>
+          <tr>
+            <td colspan="2"> Tipo de Acceso<select name="acceso" id="acceso" onchange="seleccionar()"> Acceso
+              <option value="0">Seleccione</option>
+              <option value="1">Cateter</option>
+              <option value="2">Fistula</option>
+              <option value="3">Protesis</option>
+              </select>
+              <td colspan="2">Sitio de acceso
+                <select name="opciones" id="op">
+                  <option value=" "></option>
+                </select>
+              </td>
+              <td colspan="2">Estado: <select name="estado" id="estado">
+                <option value="Bueno">Bueno</option>
+                <option value="Regular">Regular</option>
+                <option value="No funciona">No funciona</option>
+              </select>
+
+              </td>
+          </td>
+</tr>
+         
+          <tr>
+            <td class="tg-0lax" colspan="2">Dializador:
+              <select name="dializador" id="dializador">
+                <option value="F5">F5</option>
+                <option value="F8">F8</option>
+                <option value="F10">F10</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Heparina inicial: <input type="number" name="heparina" id="heparina">  </td>
+            <td class="tg-0lax" colspan="2">Concentrado:
+              <select name="concentrado" id="concentrado">
+                <option value="X1">X1</option>
+                <option value="X5">X5</option>
+                <option value="X10">X10</option>
+                <option value="X15">X15</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="6" align="center">Chequeo equipo de diálisis</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">Flujo dializado:
+              <select name="flujoDializado" id="flujoDializado">
+                <option value="300">300</option>
+                <option value="500">500</option>
+                <option value="800">800</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Flujo sangre: <input type="number" name="fsangre" id="fsangre"></td>
+
+            <td class="tg-0lax" colspan="2">Transfusiones: 
+              <select name="transfusiones" id="transfusiones">
+                <option value="si">Sí</option>
+                <option value="no" selected>No</option>
+              </select>
+          </td>
+            <td class="tg-0lax" colspan="2">Test desinf.:
+              <select name="desinf" id="desinf">
+                <option value="ok" selected>OK</option>
+                <option value="no">NO</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Alarmas: 
+              <select name="alarmas" id="alarmas">
+                <option value="ok" selected>OK</option>
+                <option value="error ">Error</option>
+              </select>
+
+            </td>
+            <td class="tg-0lax" colspan="2">Desincrustración:
+              <select name="desinc" id="desinc">
+                <option value="ok" selected>OK</option>
+                <option value="si">Sí</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">Entró: <input type="number" name="entra" id="entra"></td>
+            <td class="tg-0lax" colspan="2">Salió: <input type="number" name="sale" id="sale"></td>
+            <td class="tg-0lax" colspan="2">Balance: <input type="number" step="0.1" id="dif" disabled onchange="setTwoNumberDecimal"></td>
+            <td class="tg-0lax" colspan="2">T°:
+              <select name="tempBomba" id="tempBomba">
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Base Na: <input type="number" name="baseNa" id="baseNa" ></td>
+            <td class="tg-0lax" colspan="2">Conc. Na <input type="number" name="concNa" id="concNa" ></td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="3">Urea pre: <input type="number" name="ureaPre" id="ureaPre"></td>
+            <td class="tg-0lax" colspan="3">Urea post: <input type="number" name="ureaPost" id="ureaPost"></td>
+            <td class="tg-0lax" colspan="6" align="center">Signos vitales</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="3">Na variable:
+              <select name="naVariable" id="naVariable">
+                <option value="sí">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="3">Ultrafiltración:
+              <select name="ultrafilt" id="ultrafilt">
+                <option value="sí">Sí</option>
+                <option value="no">No</option>
+            </td>
+            <td class="tg-0lax">Hora</td>
+            <td class="tg-0lax">P. sist.</td>
+            <td class="tg-0lax">P. diast.</td>
+            <td class="tg-0lax">Glu</td>
+            <td class="tg-0lax">Ulf. hora</td>
+            <td class="tg-0lax"></td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">Jeringas:
+              <select name="jeringas" id="jeringas">
+                <option value="1">1cc</option>
+                <option value="5">5cc</option>
+                <option value="10">10cc</option>
+                <option value="20">20cc</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Sol. salina:
+              <select name="ssalina" id="ssalina">
+                <option value="500">500 mL</option>
+                <option value="1000">1000 mL</option>
+                <option value="Glucosa">Glucosa</option>
+              </select>
+            </td>
+            <td class="tg-0lax" colspan="2">Tubuladuras</td>
+            <td class="tg-0lax"><input type="time" name="" id="" ></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+          </tr>
+          <tr>
+          
+            <td class="tg-0lax" colspan="6">Agujas:</td>
+            <!-- <td class="tg-0lax"></td>-->
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td> 
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="6" align="center">Post diálisis</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">NTG:</td>
+            <td class="tg-0lax" colspan="2">DOPA:</td>
+            <td class="tg-0lax" colspan="2">NORA:</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="2">NPS:</td>
+            <td class="tg-0lax" colspan="2">DOBUTA:</td>
+            <td class="tg-0lax" colspan="2">ARN:</td>
+            <td class="tg-0lax" colspan="4" rowspan="3">Comentarios<textarea name="comentarios" id="comentarios" cols="70" rows="6"></textarea></td>
+            <td class="tg-0lax" colspan="2" rowspan="3">Firma</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax" colspan="3">O2:</td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax" colspan="2"></td>
+          </tr>
+          <tr>
+            <!-- <td class="tg-0lax" colspan="3">Sobrevive:
+              <select name="sobrevive" id="sobrevive">
+                <option value="sí">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </td> -->
+            <td class="tg-0lax" colspan="3">N° registro:</td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="reset" value="Limpiar" id="limpiar" >
+      <button type="submit" id="guardar">Guardar</button>
+    </form>
+  </div>
+  <script src="styles/js/bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="js/funciones.js"></script>
+</body>
+</html>
