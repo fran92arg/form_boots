@@ -28,7 +28,12 @@ div{
    padding: 20px;
    margin: 3%;
 }
-
+.sesion{
+    justify-content: right;
+}
+.nya{
+    display: flexbox;
+}
  /* .button {
     border-radius: 12px;
     font-size: 1.5em;
@@ -45,3 +50,7 @@ div{
  /* form {
     font-size: 1em;
  } */ 
+ #tabla{
+    border: 20px rgb(81, 218, 53);
+   
+ }

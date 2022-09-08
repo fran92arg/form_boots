@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 
   <!-- Load paper.css for happy printing -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+ <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css"> -->
 
   <!-- Set page size here: A5, A4 or A3 -->
   <!-- Set also "landscape" if you need -->
@@ -22,61 +22,67 @@
 </head>
 <body class="A4 mx-auto">
 <div class="container" id="imprimir">
-    <form role="form" id="formulario"  action="archivo.php">
-      <div class="row">
-        <div class="col-2" id="imagen">
+    <form role="form" id="formulario"  action="archivo.php" class="form">
+      <div class="row sesion">
+        <div class="col-3" id="imagen">
           <p>imagen</p>
         </div>
+        <div class="col">
+          <label>Obra Social: <input type="text" name="os" id="os" class="form-control"></label> <br>
+          <label>N° afiliado:<input type="number" name="afiliado" id="afiliado" class="form-control"></label><br>
+          <label>Diagnóstico: <input type="text" name="diagnostico" id="diagnostico" class="form-control"></label>
+        </div>
+
+        <div class="col-2">
+          <label for="Fecha">Fecha:</label><input type="date" name="fecha" id="fecha" class="form-control-inline" >
+        </div>
+        <div class="col-2">
+          <label for="sesion">Sesión:</label><input type="sesion" name="sesion" class="form-control-inline" style="width: 80px" id="sesion" disabled >
+        </div>
         <div class="col-3">
-          <label>Nombre y Apellido:<input type="text" name="nombre" id="nombre" class="form-control" required style="width:100% ;"></label>
+          <label for="dias_internacion">Días de internación: </label><input type="date" name="internacion" id="internacion" class="form-control-inline" >
+        </div> 
+      
+      </div>
+      
+       <div class="row">
+        
+        <div class="col-4">
+          <label>Nombre y Apellido:<input type="text" name="nombre" id="nombre"  class="form-control nya" required style="width:100% ;"></label>
+        </div>
+        <div class="col">
+          <label>DNI N°: <input placeholder="Sin puntos" type="text" size="8" name="dni" id="dni"  class="form-control" required></label>
+        </div>
+        <div class="col">
+          <label>Edad:<input type="number" name="edad" id="edad" class="form-control" required> </label>
         </div>
         <div class="col select">
           <label>Sexo:
             <select name="sexo" id="sexo" class="form-control" required>
-              <option value="defecto" selected>Seleccione sexo</option>
+              <!-- <option value="defecto" selected>Seleccione</option> -->
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
             </select>
         </label>
         </div>
-        <div class="col">
-          <label for="Fecha">Fecha:<input type="date" name="fecha" id="fecha" class="form-control" ></label>
+        
+          <div class="col select">   
+            <label>Sobrevive:
+              <select name="sobrevive" id="sobrevive" class="form-control" required>
+                <option value="Si" selected>Si</option>
+                <option value="No">No</option>
+              </select></label>
+          </div>
         </div>
-        <div class="col-1">
-          <label for="Sesion">Sesión:<input type="sesion" class="form-control" id="sesion" disabled ></label>
-        </div>
-        <div class="col">
-          <label for="dias_internacion">Días de internación: <input type="date" name="internacion" id="internacion" class="form-control" ></label>
-        </div>
-      </div>
+      </div> <!--
       <div class="row">
-        <div class="col-2">
-          <label>DNI N°: <input placeholder="Sin puntos" type="text" size="8" name="dni" id="dni"  class="form-control" required></label>
-        </div>
-        <div class="col-1">
-          <label>Edad:<input type="number" name="edad" id="edad" class="form-control" required> </label>
-        </div>
-        <div class="col">
-          <label>Obra Social: <input type="text" name="os" id="os" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label>N° afiliado:<input type="number" name="afiliado" id="afiliado" class="form-control"></label>
-        </div>
-
-        <div class="col">
-          <label>Diagnóstico: <input type="text" name="diagnostico" id="diagnostico" class="form-control"></label>
-        </div>
+        
+        
 
       </div>
 
       <div class="row"> 
-        <div class="col-1 select">   
-          <label>Sobrevive:
-            <select name="sobrevive" id="sobrevive" class="form-control" required>
-              <option value="Si" selected>Si</option>
-              <option value="No">No</option>
-            </select></label>
-        </div>
+        
         
         <div class="col-1 select">
           <label>Servicio: <select name="servicio" id="servicio" class="form-control">
@@ -94,7 +100,6 @@
                 <option value="ssj">SSJ</option>
                 <option value="otro">Otro</option>
               </select></label>
-           
         </div>
         <div class="col-3 select">
           <label>Prescripción de Diálisis:<select name="prescripcion" id="prescripcion" class="form-control">
@@ -304,87 +309,61 @@
               <input class="form-check-input" type="checkbox" value="6" id="atb">
               <label  for="atb">ATB</label>
             </div>
-              <!-- <div class="container " style="text-align: center;">
-
-              </div>
-              <div class="container " style="text-align: center;">
-                <input class="form-check-input" type="checkbox" value="3" id="dopa">
-                <label  for="dopa">DOPA</label> 
-              </div>  -->
           </div>
-          <!-- <div class="row">
-            <div class="col">
-              <div class="row">
-                <label>Oxigenoterapia:
-                  <select name="jeringas" id="jeringas" class="form-control-inline">
-                    <option value="1">1cc</option>
-                    <option value="5">5cc</option>
-                    <option value="10">10cc</option>
-                    <option value="20">20cc</option>
-                  </select></label>
-                </div>
-            </div>
-          </div> -->
         </div>
         <div class="col-6" >
-          <!-- <div class="col-6"> -->
-            <div class="row ">
-              <div class="col">Hora</div>
-              <div class="col">P. sist.</div>
-              <div class="col">P.diast.</div>
-              <div class="col">Glu</div>
-              <div class="col">S. sal</div>
-              <div class="col">ulf. hora</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <!-- <div class="row" style="background-color: blue;height: auto">
-              <div class="col" >
-                <textarea name="" id="" cols="45" rows="4" disabled></textarea>
-                <textarea name="" id="" cols="21" rows="4"></textarea>
-              </div>
-            </div> -->
-          <!-- </div> -->
+          <table class="table table-bordered" id="tabla">
+            <thead>
+              <th>Hora</th>
+              <th>P. sist</th>
+              <th>P. Diast</th>
+              <th>Glu</th>
+              <th>S. Sal</th>
+              <th>Ulf. Hs</th>
+            </thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </table>
         </div>
-      </div> <!-- fin columna post-->
+      </div>
       <div class="row">
         <div class="col">
           <label>Oxigenoterapia:
@@ -407,15 +386,11 @@
           </div>
         </div>
       </div>
-      
-      <!-- pegado hasat aca -->
-
-      
-        
         <input type="button" id="guardar" class="btn-lg btn-outline-primary btn-default" value="Guardar">
         <input type="reset" value="Limpiar" id="limpiar" class="btn-lg btn-outline-primary" >
 
-        <button onclick="window.print()" class="btn-lg btn-outline-primary">Imprimir</button>
+        <button onclick="window.print()" class="btn-lg btn-outline-primary">Imprimir</button> -->
+     
     </form>
 </div>
 <!-- links jquery -->
@@ -425,7 +400,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <script src="js/funciones.js"></script>
 <script src="styles/js/bootstrap.js"></script>
-<script src="js/html2pdf.js-master/dist/html2pdf.bundle.min.js"></script>
 
 
 </body>
