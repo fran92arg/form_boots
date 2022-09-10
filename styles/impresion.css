@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  background: #CCCCCC;
+}
+div.portrait, div.landscape {
+  margin: 10px auto;
+  padding: 10mm;
+  border: solid 1px black;
+  overflow: hidden;
+  page-break-after: always;
+  background: white;
+}
+div.portrait {
+  width: 190mm;
+  height: 276mm;
+}
+div.landscape {
+  width: 276mm;
+  height: 190mm;
+  /* width: 190mm;
+  height: 276mm; */
+}
+@media print {
+  body {
+    background: none;
+  }
+  .no-print, .no-print *{
+  display: none !important;
+  height: 0;
+  }
+div.portrait, div.landscape {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+div.landscape {
+  transform: rotate(270deg) translate(-276mm, 0);
+  transform-origin: 0 0;
+}
+}
