@@ -1,406 +1,445 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <!-- CSS only -->
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css" media="all">
-      <!--
-    <link rel="stylesheet" href="styles/css/bootstrap.css" media="all">
-    <link rel="stylesheet" href="styles/css/bootstrap-grid.css" media="all"> -->
-      <!-- Normalize or reset CSS with your favorite library -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
-
-  <!-- Load paper.css for happy printing -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css"> -->
-
-  <!-- Set page size here: A5, A4 or A3 -->
-  <!-- Set also "landscape" if you need -->
-  <!-- <style>@page { size: A4 }</style> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="styles/impresion.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
+  <div class="landscape">
+    <div class="parent-div">
+      <div class="container-fluid"  style="background-color:aqua;height: 100% ;">
+        <div class="row" style="background-color:red">
+          <div class="container-fluid col-3" id="imagen">
+            <p>imagen</p>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="container-fluid">
+                  <label>Nombre y Apellido:</label><input type="text" name="nombre" id="nombre" class="form-control ">
+              </div>
+            </div>
+            <div class="row" >
+              <div class="container-fluid" >
+                <label>Sexo:</label>
+                  <select name="sexo" id="sexo" class="form-control " required>
+                    <option value="defecto" selected>Seleccione sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="container-fluid">
+                  <label>DNI N°:</label> <input placeholder="Sin puntos" type="text" size="8" name="dni" id="dni"  class="form-control " required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-fluid">
+                <label>Edad:</label><input type="number" name="edad" id="edad" class="form-control " required> 
 
-    <div class="landscape">
-      
-    </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="container-fluid">
+                <label for="Fecha">Fecha:</label><input type="date" name="fecha" id="fecha" class="form-control " >
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-fluid">
+                <label>Diagnóstico: </label><input type="text" name="diagnostico" id="diagnostico" class="form-control ">
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="row">
+              <div class="container">
+                <label for="Sesion">Sesión:</label><input type="sesion" class="form-control " id="sesion" disabled >
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <label>Sobrevive:</label>
+                <select name="sobrevive" id="sobrevive" class="form-control " required>
+                  <option value="Si" selected>Si</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="container">
+                <label for="internacion">Días de internación: </label><input type="date" name="internacion" id="internacion" class="form-control " >
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-fluid">
+                <label>Institución: </label>
+                  <select name="institucion" id="institucion" class="form-control ">
+                    <option value="hpriv">H. Privado</option>
+                    <option value="cymin">CYMIN</option>
+                    <option value="IMDJ">IMSJ</option>
+                    <option value="ssj">SSJ</option>
+                    <option value="otro">Otro</option>
+                  </select>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- <div class="landscape" id="imprimir"> -->
-    <!-- <form role="form" id="formulario" action="archivo.php">
-      <div class="row">
-        <div class="col-2" id="imagen">
-          <p>imagen</p>
-        </div>
-        <div class="col-3">
-          <label>Nombre y Apellido:<input type="text" name="nombre" id="nombre" class="form-control" required style="width:100% ;"></label>
-        </div>
-        <div class="col select">
-          <label>Sexo:
-            <select name="sexo" id="sexo" class="form-control" required>
-              <option value="defecto" selected>Seleccione sexo</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-            </select>
-        </label>
-        </div>
-        <div class="col">
-          <label for="Fecha">Fecha:<input type="date" name="fecha" id="fecha" class="form-control" ></label>
-        </div>
-        <div class="col-1">
-          <label for="Sesion">Sesión:<input type="sesion" class="form-control" id="sesion" disabled ></label>
-        </div>
-        <div class="col">
-          <label for="dias_internacion">Días de internación: <input type="date" name="internacion" id="internacion" class="form-control" ></label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2">
-          <label>DNI N°: <input placeholder="Sin puntos" type="text" size="8" name="dni" id="dni"  class="form-control" required></label>
-        </div>
-        <div class="col-1">
-          <label>Edad:<input type="number" name="edad" id="edad" class="form-control" required> </label>
-        </div>
-        <div class="col">
-          <label>Obra Social: <input type="text" name="os" id="os" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label>N° afiliado:<input type="number" name="afiliado" id="afiliado" class="form-control"></label>
-        </div>
-
-        <div class="col">
-          <label>Diagnóstico: <input type="text" name="diagnostico" id="diagnostico" class="form-control"></label>
-        </div>
-
-      </div>
-
-      <div class="row"> 
-        <div class="col-1 select">   
-          <label>Sobrevive:
-            <select name="sobrevive" id="sobrevive" class="form-control" required>
-              <option value="Si" selected>Si</option>
-              <option value="No">No</option>
-            </select></label>
-        </div>
-        
-        <div class="col-1 select">
-          <label>Servicio: <select name="servicio" id="servicio" class="form-control">
+        <div class="row" style="background-color: yellow;">
+          <div class="col">
+            <label>Obra Social: </label><input type="text" name="os" id="os" class="form-control ">
+          </div>
+          <div class="col">
+            <label>N° afiliado:</label><input type="number" name="afiliado" id="afiliado" class="form-control ">
+          </div>
+          <div class="col-1">
+            <label>Servicio:</label>  <select name="servicio" id="servicio" class="form-control">
               <option value="TIP">TIP</option>
               <option value="UCO">UCO</option>
               <option value="UTI">UTI</option>
-            </select></label> 
-        </div>
-        <div class="col-2 select">
-          <label>Institución: 
-              <select name="institucion" id="institucion" class="form-control">
-                <option value="hpriv">H. Privado</option>
-                <option value="cymin">CYMIN</option>
-                <option value="IMDJ">IMSJ</option>
-                <option value="ssj">SSJ</option>
-                <option value="otro">Otro</option>
-              </select></label>
-           
-        </div>
-        <div class="col-3 select">
-          <label>Prescripción de Diálisis:<select name="prescripcion" id="prescripcion" class="form-control">
-              <option value="Hd/Uf" selected>Hemodialisis/Ultrafiltrado</option>
-              <option value="Hd">Hemodialisis</option>
-              <option value="Uf">Ultrafiltrado</option>
-              </select></label>
-        </div>
-        <div class="col">
-          <label>Tiempo prescripto de diálisis:
-          <input type="number" name="tpodialisis" id="tpodialisis" class="form-control"></label> 
-        </div>
-        <div class="col-1">
-          <label>Inicio: <input type="number" name="inicio" id="inicio" class="form-control"> </label> 
-        </div>
-        <div class="col-1">
-          <label>Fin: <input type="number" name="fin" id="fin" class="form-control"> </label> 
-        </div>
-
-
-
-
-      </div>
-
-      <div class="row h-auto" > 
-        <div class="col-6">
-          <div class="row">
-            <label for="">Acceso vascular</label>
-          </div>
-          <div class="row">
-            <div class="col select-">
-              <label> Tipo de Acceso <select name="acceso" id="acceso" onchange="seleccionar()" class="form-control"> 
-                <option value="0">Seleccione</option>
-                <option value="1">Cateter</option>
-                <option value="2">Fistula</option>
-                <option value="3">Protesis</option>
-                </select></label>
-            </div>
-            <div class="col select"><label>Sitio de acceso
-              <select name="opciones" id="op" class="form-control">
-                <option value=" "></option>
-            </select></label>
-            </div>
-            <div class="col">
-              <label>Estado:  <select name="estado" id="estado" class="form-control">
-                <option value="Bueno">Bueno</option>
-                <option value="Regular">Regular</option>
-                <option value="No funciona">No funciona</option>
-              </select></label>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <label>Reporte de incidente clínico: </label><textarea style="resize:none ;" rows="2.5" name="reporte" id="reporte" class="form-control"></textarea>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col select">
-          <label>Na variable:
-              <select name="naVariable" id="naVariable" class="form-control">
-                <option value="sí">Sí</option>
-                <option value="no">No</option>
-              </select></label>
-        </div>
-
-        <div class="col select">
-          <label>Ultrafiltración:
-            <select name="ultrafilt" id="ultrafilt" class="form-control">
-            <option value="sí">Sí</option>
-            <option value="no">No</option>
-            </select></label>
-        </div>
-        <div class="col select">
-          <label for="">Concentrado:
-            <select name="concentrado" id="concentrado" class="form-control">
-              <option value="X1">X1</option>
-              <option value="X5">X5</option>
-              <option value="X10">X10</option>
-              <option value="X15">X15</option>
             </select>
-          </label>
+          </div>
+          <div class="col select">
+            <label for="prescripcion">Prescripción de Diálisis:<select name="prescripcion" id="prescripcion" class="form-control "></label>
+                <option value="Hd/Uf" selected>Hemodialisis/Ultrafiltrado</option>
+                <option value="Hd">Hemodialisis</option>
+                <option value="Uf">Ultrafiltrado</option>
+                </select>
+          </div>
+          <div class="col">
+            <label>Tiempo prescripto de diálisis:</label> 
+            <input type="number" name="tpodialisis" id="tpodialisis" class="form-control ">
+          </div>
+          <div class="col-1">
+            <label>Inicio:</label>  <input type="number" name="inicio" id="inicio" class="form-control "> 
+          </div>
+          <div class="col-1">
+            <label>Fin: </label><input type="number" name="fin" id="fin" class="form-control ">  
+          </div>
         </div>
-        <div class="col select">
-          <label>Flujo dializado: 
-            <select name="flujoDializado" id="flujoDializado" class="form-control">
-              <option value="300">300</option>
-              <option value="500">500</option>
-              <option value="800">800</option>
-            </select></label>
-        </div>
-        <div class="col-6">
-          <label>Chequeo de equipo de dialisis</label>
-        </div>
-      </div>
+        <div class="row" style="background-color:green ;">
+          <div class="col-2" style="width: 10%;">
+            <div class="row">
+              <div class="container" >
+                <label for="dializador">Dializador</label>
+                <select name="dializador" id="dializador" class="form-control">
+                  <option value="F5">F5</option>
+                  <option value="F8">F8</option>
+                  <option value="F10">F10</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-fluid">
+                <label>Flujo sangre:</label><input type="number" name="fsangre" id="fsangre" class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="container-fluid">
+                <label for="">Concentrado:</label>
+                  <select name="concentrado" id="concentrado" class="form-control ">
+                    <option value="X1">X1</option>
+                    <option value="X5">X5</option>
+                    <option value="X10">X10</option>
+                    <option value="X15">X15</option>
+                  </select>
+                
+              </div>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col">
-          <label>Flujo sangre:<input type="number" name="fsangre" id="fsangre" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label>Urea pre:<input type="number" name="ureaPre" id="ureaPre" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label>Urea post: <input type="number" name="ureaPost" id="ureaPost" class="form-control"></label>
-        </div>
-        <div class="col select">
-          <label>Transfusiones: 
-          <select name="transfusiones" id="transfusiones" class="form-control">
-            <option value="si">Sí</option>
-            <option value="no" selected>No</option>
-          </select></label>
-        </div>
-        <div class="col-2 select">
-          <label>Test desinf.:
-          <select name="desinf" id="desinf" class="form-control">
-            <option value="ok" selected>OK</option>
-            <option value="no">NO</option>
-          </select></label>
-        </div>
-        <div class="col-2 select">
-          <label>Alarmas: 
-          <select name="alarmas" id="alarmas" class="form-control">
-            <option value="ok" selected>OK</option>
-            <option value="error ">Error</option>
-          </select></label>
-        </div>
-        <div class="col-2">
-          <label>Desincrustración:
-          <select name="desinc" id="desinc" class="form-control">
-            <option value="ok" selected>OK</option>
-            <option value="si">Sí</option>
-          </select></label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label>Entró: <input type="number" name="entra" id="entra" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label for="">Salió:<input type="number" name="sale" id="sale" class="form-control"></label>
-        </div>
-        <div class="col">
-          <label>Balance: <input type="number" step="0.1" id="dif" disabled onchange="setTwoNumberDecimal" class="form-control"></label>
-        </div>
-        <div class="col-2 select">
-          <label>T° bomba: 
-            <select name="tempBomba" id="tempBomba" class="form-control">
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
-            </select></label>
-        </div> 
-        <div class="col-2">
-          <label>Base Na: <input type="number" name="baseNa" id="baseNa" class="form-control"></label>
-        </div>
-        <div class="col-2">
-          <label>Conc. Na:<input type="number" name="concNa" id="concNa" class="form-control"></label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="row" >
-            <div class="col select">
-              <label>Jeringas:
-              <select name="jeringas" id="jeringas" class="form-control">
-                <option value="1">1cc</option>
-                <option value="5">5cc</option>
-                <option value="10">10cc</option>
-                <option value="20">20cc</option>
-              </select></label>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <label for="heparina">Heparina inic.:</label><input type="number" name="heparina" id="heparina" class="form-control ">
+              </div>
+              <div class="col">
+                <label>Flujo dializado: </label>
+                <select name="flujoDializado" id="flujoDializado" class="form-control ">
+                  <option value="300">300</option>
+                  <option value="500">500</option>
+                  <option value="800">800</option>
+                </select>
+              </div>
             </div>
-            <div class="col">
-              <label>Tubuladuras:<input type="text" name="tubuladuras" id="tubuladuras" class="form-control"></label>
+            <div class="row">
+              <div class="col">
+                <label>Urea pre:</label><input type="number" name="ureaPre" id="ureaPre" class="form-control ">
+              </div>
+              <div class="col">
+                <label>Urea post: </label><input type="number" name="ureaPost" id="ureaPost" class="form-control ">
+              </div>
             </div>
-            <div class="col">
-              <label>Agujas:<input type="text" name="agujas" id="agujas" class="form-control"></label>
+            <div class="row">
+              <div class="col">
+                <label>Na variable:</label>
+                  <select name="naVariable" id="naVariable" class="form-control ">
+                    <option value="sí">Sí</option>
+                    <option value="no">No</option>
+                  </select>
+              </div>
+              <div class="col">
+                <label>Ultrafiltración:</label>
+                  <select name="ultrafilt" id="ultrafilt" class="form-control ">
+                  <option value="sí">Sí</option>
+                  <option value="no">No</option>
+                  </select>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col">Post diálisis</div>
-          </div>
-          <div class="row" >
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="1" id="ntg">
-              <label  for="ntg">NTG</label>
-            </div>
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="2" id="nps">
-              <label  for="nps">NPS</label>
-            </div>
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="3" id="dopa">
-              <label  for="dopa">DOPA</label>
-            </div>       
-          </div>
-          <div class="row" >
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="4" id="nora">
-              <label  for="nora">NORA</label>
-            </div>
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="5" id="dabuta">
-              <label  for="dabuta">DABUTA</label>
-            </div>
-            <div class="col">
-              <input class="form-check-input" type="checkbox" value="6" id="atb">
-              <label  for="atb">ATB</label>
-            </div>
-          </div>
-        </div>
-        <div class="col-6" >
-            <div class="row">
-              <div class="col">Hora</div>
-              <div class="col">P. sist.</div>
-              <div class="col">P.diast.</div>
-              <div class="col">Glu</div>
-              <div class="col">S. sal</div>
-              <div class="col">ulf. hora</div>
+          <div class="col">
+            <div class="row" style="background-color: red;">
+              <div class="col">
+                <label>Transfusiones: </label>
+                <select name="transfusiones" id="transfusiones" class="form-control">
+                  <option value="si">Sí</option>
+                  <option value="no" selected>No</option>
+                </select>
+              </div>
+              <div class="col">
+                <label>Jeringas:</label>
+                  <select name="jeringas" id="jeringas" class="form-control">
+                    <option value="1">1cc</option>
+                    <option value="5">5cc</option>
+                    <option value="10">10cc</option>
+                    <option value="20">20cc</option>
+                  </select>
+              </div>
             </div>
             <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
+              <div class="col">
+                <label>Entró:</label> <input type="number" name="entra" id="entra" class="form-control">
+              </div>
+              <div class="col">
+                <label for="">Salió:</label><input type="number" name="sale" id="sale" class="form-control">
+              </div>
             </div>
             <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-              <div class="col">4</div>
-              <div class="col">5</div>
-              <div class="col">6</div>
-            </div>
-        </div>
-      </div> 
-      <div class="row">
-        <div class="col">
-          <label>Oxigenoterapia:
-            <select name="o2" id="o2" class="form-control">
-              <option value="1" selected>Sin oxígeno</option>
-              <option value="2">Cánula nasal</option>
-              <option value="3">Máscara reservorio</option>
-              <option value="4">VNI</option>
-              <option value="5">ARM</option>
-            </select></label>
-        </div>
-        <div class="col">
-          <div class="row">
-            <div class="col">
-              <textarea name="" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div class="col">
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <label>Balance:</label> <input type="number" step="0.1" id="dif" disabled onchange="setTwoNumberDecimal" class="form-control">
             </div>
           </div>
+          <div class="col-6">
+            <h6>Reporte de incidente clínico</h6>
+              <textarea name="" id="" cols="86" rows="6"></textarea>
+          </div>
         </div>
-      </div>
-        <button type="submit" class="btn btn-default">Guardar</button> 
-        <input type="reset" value="Limpiar" id="limpiar" >
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col">
+                <label>Tubuladuras:</label><input type="text" name="tubuladuras" id="tubuladuras" class="form-control">
+              </div>
+              <div class="col">
+                <label>Agujas:</label><input type="text" name="agujas" id="agujas" class="form-control">
+              </div>
+              <div class="col">
+                <label>Sol. salina:</label>
+                  <select name="ssalina" id="ssalina" class="form-control">
+                    <option value="500" selected>500 mL</option>
+                    <option value="1000">1000 mL</option>
+                    <option value="Glu">Glucosa</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row">
+              <h6>Acceso vascular</h6>
+              <div class="col select">
+                <label> Tipo de Acceso </label><select name="acceso" id="acceso" onchange="seleccionar()" class="form-control"> 
+                  <option value="0">Seleccione</option>
+                  <option value="1">Cateter</option>
+                  <option value="2">Fistula</option>
+                  <option value="3">Protesis</option>
+                  </select>
+              </div>
+              <div class="col select"><label>Sitio de acceso</label>
+                <select name="opciones" id="op" class="form-control">
+                  <option value=" "></option>
+                </select>
+              </div>
+              <div class="col">
+                <label>Estado: </label> <select name="estado" id="estado" class="form-control">
+                  <option value="Bueno">Bueno</option>
+                  <option value="Regular">Regular</option>
+                  <option value="No funciona">No funciona</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <h6>Chequeo equipo de diálisis</h6>
+            <div class="row">
+              <div class="col">
+                <label>Test desinf.:</label>
+                  <select name="desinf" id="desinf" class="form-control">
+                    <option value="ok" selected>OK</option>
+                    <option value="no">NO</option>
+                  </select>
+              </div>
+              <div class="col">
+                <label for="">Alarmas</label>              
+                <select name="alarmas" id="alarmas" class="form-control">
+                  <option value="ok" selected>OK</option>
+                  <option value="error ">Error</option>
+                </select>
+              </div>
+              <div class="col">
+                <label>T° bomba: </label>
+                  <select name="tempBomba" id="tempBomba" class="form-control">
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Desincrustración:</label>
+                  <select name="desinc" id="desinc" class="form-control">
+                    <option value="ok" selected>OK</option>
+                    <option value="si">Sí</option>
+                  </select>
+              </div>
+              <div class="col">
+                <label>Base Na:</label> <input type="number" name="baseNa" id="baseNa" class="form-control">
+              </div>
+              <div class="col">
+                <label>Conc. Na:</label><input type="number" name="concNa" id="concNa" class="form-control">
+              </div>
+            </div>
+          </div>
 
-        <button onclick="window.print()">Imprimir</button>
-    </form> -->
-<!-- </div> -->
-<!-- links jquery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-<script src="js/funciones.js"></script>
-<!-- <script src="styles/js/bootstrap.js"></script>
-<script src="js/html2pdf.js-master/dist/html2pdf.bundle.min.js"></script> -->
+  
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h6>Signos vitales</h6>
+            <table class="table table-bordered table-sm" style="text-align:center ;">
+              <thead>
+                <tr>
+                  <th>Hora</th>
+                  <th>P. sist.</th>
+                  <th>P. diast.</th>
+                  <th>Glu</th>
+                  <th>S. salina</th>
+                  <th>Ulf. hora</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="col-6">
+            Post diálisis
 
+            
+            <div class="row"> 
+              <div class="col" style="background-color: yellow;">
+                <div class="row" style="height: 50%;">
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="1" id="ntg">
+                    <label  for="ntg">NTG</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="2" id="nps">
+                    <label  for="nps">NPS</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="3" id="dopa">
+                    <label  for="dopa">DOPA</label>
+                  </div> 
+                </div>
+                <div class="row" style="height: 50%;">
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="4" id="nora">
+                    <label  for="nora">NORA</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="5" id="dabuta">
+                    <label  for="dabuta">DABUTA</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="checkbox" value="6" id="atb">
+                    <label  for="atb">ATB</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <label>Oxigenoterapia:</label>
+                <select name="o2" id="o2" class="form-control">
+                  <option value="1" selected>Sin oxígeno</option>
+                  <option value="2">Cánula nasal</option>
+                  <option value="3">Máscara reservorio</option>
+                  <option value="4">VNI</option>
+                  <option value="5">ARM</option>
+                </select>
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col" style="background-color: red;">
+                <h6>Comentarios</h6>
+                <textarea name="" id="" cols="60" rows="5"></textarea>
+              </div>
+              <div class="col">
+                <h6>Firma</h6>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>
