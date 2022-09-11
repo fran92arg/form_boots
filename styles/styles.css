@@ -7,9 +7,14 @@ div{
 .checkbox{
     text-align: center;
 }
-/* select.form-control{
+select.form-control{
     color:red;
-} */
+    text-align: center;
+}
+textarea{
+    resize: none;
+    overflow: auto;
+}
 /* .col{
     height: 80px;
 }
@@ -18,4 +23,34 @@ div{
 } */
 /* #imagen{
     height: 240px;
+} */
+.fila{
+    width: 276mm;
+    height: 40mm;
+}
+
+
+.parent-div {
+    display: flex;
+    flex-wrap: wrap;
+    /* for horizontal aligning of child divs */
+    justify-content: center;
+    /* for vertical aligning */
+    /* align-items: center; */
+    height: 180mm;
+
+}
+  
+/* .child-div {
+    width:35%;
+    height: 100%;
+    display: inline-block;
+}
+.child-img{
+    width:29% ;
+    height: 100%;
+    display: inline-block;
+} */
+/* .primera{
+    height: 12mm;
 } */

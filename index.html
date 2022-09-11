@@ -6,23 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <!-- CSS only -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css" media="all">
+      <!--
     <link rel="stylesheet" href="styles/css/bootstrap.css" media="all">
-    <link rel="stylesheet" href="styles/css/bootstrap-grid.css" media="all">
-  <!-- imprimir -->
+    <link rel="stylesheet" href="styles/css/bootstrap-grid.css" media="all"> -->
       <!-- Normalize or reset CSS with your favorite library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"> -->
 
   <!-- Load paper.css for happy printing -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css"> -->
 
   <!-- Set page size here: A5, A4 or A3 -->
   <!-- Set also "landscape" if you need -->
-  <style>@page { size: A4 }</style>
+  <!-- <style>@page { size: A4 }</style> -->
 </head>
-<body class="A4">
-<div class="container" id="imprimir">
-    <form role="form" id="formulario" action="archivo.php">
+<body>
+
+    <div class="landscape">
+      
+    </div>
+
+<!-- <div class="landscape" id="imprimir"> -->
+    <!-- <form role="form" id="formulario" action="archivo.php">
       <div class="row">
         <div class="col-2" id="imagen">
           <p>imagen</p>
@@ -304,30 +312,9 @@
               <input class="form-check-input" type="checkbox" value="6" id="atb">
               <label  for="atb">ATB</label>
             </div>
-              <!-- <div class="container " style="text-align: center;">
-
-              </div>
-              <div class="container " style="text-align: center;">
-                <input class="form-check-input" type="checkbox" value="3" id="dopa">
-                <label  for="dopa">DOPA</label> 
-              </div>  -->
           </div>
-          <!-- <div class="row">
-            <div class="col">
-              <div class="row">
-                <label>Oxigenoterapia:
-                  <select name="jeringas" id="jeringas" class="form-control-inline">
-                    <option value="1">1cc</option>
-                    <option value="5">5cc</option>
-                    <option value="10">10cc</option>
-                    <option value="20">20cc</option>
-                  </select></label>
-                </div>
-            </div>
-          </div> -->
         </div>
         <div class="col-6" >
-          <!-- <div class="col-6"> -->
             <div class="row">
               <div class="col">Hora</div>
               <div class="col">P. sist.</div>
@@ -376,15 +363,8 @@
               <div class="col">5</div>
               <div class="col">6</div>
             </div>
-            <!-- <div class="row" style="background-color: blue;height: auto">
-              <div class="col" >
-                <textarea name="" id="" cols="45" rows="4" disabled></textarea>
-                <textarea name="" id="" cols="21" rows="4"></textarea>
-              </div>
-            </div> -->
-          <!-- </div> -->
         </div>
-      </div> <!-- fin columna post-->
+      </div> 
       <div class="row">
         <div class="col">
           <label>Oxigenoterapia:
@@ -407,24 +387,20 @@
           </div>
         </div>
       </div>
-      
-      <!-- pegado hasat aca -->
-
-      
         <button type="submit" class="btn btn-default">Guardar</button> 
         <input type="reset" value="Limpiar" id="limpiar" >
 
         <button onclick="window.print()">Imprimir</button>
-    </form>
-</div>
+    </form> -->
+<!-- </div> -->
 <!-- links jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <script src="js/funciones.js"></script>
-<script src="styles/js/bootstrap.js"></script>
-<script src="js/html2pdf.js-master/dist/html2pdf.bundle.min.js"></script>
+<!-- <script src="styles/js/bootstrap.js"></script>
+<script src="js/html2pdf.js-master/dist/html2pdf.bundle.min.js"></script> -->
 
 </body>
 </html>
