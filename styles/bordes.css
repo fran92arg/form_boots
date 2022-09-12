@@ -1,0 +1,22 @@
+.arriba{
+  border-top: 0.5mm solid black;
+}
+.abajo{
+  border-bottom: 0.5mm solid black;
+}
+.izq{
+  border-left: 0.5mm solid black;
+}
+.der{
+  border-right: 0.5mm solid black;
+}
+.todo{
+  border-top: 0.5mm solid black;
+  border-bottom: 0.5mm solid black;
+  border-left: 0.5mm solid black;
+  border-right: 0.5mm solid black;
+}
+.costados{
+  border-left: 0.5mm solid black;
+  border-right: 0.5mm solid black;
+}

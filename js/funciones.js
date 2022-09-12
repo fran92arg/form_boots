@@ -26,16 +26,7 @@ if (acceso != 0) {
 document.RegistroPacientes.opciones.options[0].selected = true;
 }
 //textarea
-const tx = document.getElementsByTagName("textarea");
-for (let i = 0; i < tx.length; i++) {
-  tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
-  tx[i].addEventListener("input", OnInput, false);
-}
 
-function OnInput() {
-  this.style.height = "auto";
-  this.style.height = (this.scrollHeight) + "px";
-}
 
 
 //jquery para la diferencia
@@ -55,12 +46,6 @@ $("#entra")
   $("#dif").val($('#entra').val() - $('#sale').val());
 })
 .keyup();
-function setTwoNumberDecimal(event) {
+function setTwoNumberDecimal() {
   this.value = parseFloat(this.value).toFixed(3);
-}
-
-//imprimir
-function imprime(){
-  var element = document.getElementById('imprimir');
-html2pdf(element);
 }

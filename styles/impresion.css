@@ -1,15 +1,17 @@
-body {
-  margin: 0;
-  background: #CCCCCC;
-}
+/* @page{
+  size:A4 landscape;
+  size: 287mm 200mm;
+} */
 div.portrait, div.landscape {
   margin: 10px auto;
-  padding: 10mm;
+  padding: 1mm;
   border: solid 1px black;
   overflow: hidden;
   page-break-after: always;
   background: white;
 }
+/* The size of A4 page is 210mm x 297mm. You need to subtract print margins from the size. And set 
+the size of page's content: */
 div.portrait {
   width: 190mm;
   height: 276mm;
@@ -17,25 +19,28 @@ div.portrait {
 div.landscape {
   width: 276mm;
   height: 190mm;
-  /* width: 190mm;
-  height: 276mm; */
 }
+/*
+I use 276mm instead of 277mm, because different browsers scale pages a little bit differently. So some of them will print 277mm-height content on two pages. The second page will be empty. It's more safe to use 276mm.
+
+We don't need any margin, border, padding, background on the printed page, so remove them: */
+
 @media print {
   body {
     background: none;
   }
   .no-print, .no-print *{
-  display: none !important;
-  height: 0;
+    display: none !important;
+    height: 0;
+    }
+  div.portrait, div.landscape {
+    margin: 0;
+    padding: 0;
+    /* border: none; */
+    background: none;
   }
-div.portrait, div.landscape {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-}
-div.landscape {
-  transform: rotate(270deg) translate(-276mm, 0);
-  transform-origin: 0 0;
-}
+  div.landscape {
+    transform: rotate(270deg) translate(-276mm, 0);
+    transform-origin: 0 0;
+  }
 }
