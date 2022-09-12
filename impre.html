@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    body {
+  margin: 0;
+  background: #CCCCCC;
+}
+
+div.page {
+  margin: 10px auto;
+  border: solid 1px black;
+  display: block;
+  page-break-after: always;
+  width: 209mm;
+  height: 296mm;
+  overflow: hidden;
+  background: white;
+}
+
+div.landscape-parent {
+  width: 296mm;
+  height: 209mm;
+}
+
+div.landscape {
+  width: 296mm;
+  height: 209mm;
+}
+
+/* div.content {
+  padding: 10mm;
+} */
+
+body,
+div,
+td {
+  font-size: 13px;
+  font-family: Verdana;
+}
+
+@media print {
+  body {
+    background: none;
+  }
+  div.page {
+    width: 209mm;
+    height: 296mm;
+  }
+  div.landscape {
+    transform: rotate(270deg) translate(-296mm, 0);
+    transform-origin: 0 0;
+  }
+  div.portrait,
+  div.landscape,
+  div.page {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- <div class="page">
+    <div class="content">
+      First page in Portrait mode
+    </div>
+  </div> -->
+  <div class="page landscape-parent">
+    <div class="landscape">
+      <div class="content">
+        Second page in Landscape mode (correctly shows horizontally in browser and prints rotated in printer)
+      </div>
+      <div class="row" style="background-color: red;height: 20px;border: 1px solid black;margin:5% ;">
+        <!-- <div class="col-3" id="imagen">
+          <p>imagen</p>
+        </div>
+        <div class="col">
+          <label>Obra Social: <input type="text" name="os" id="os" class="form-control"></label> <br>
+          <label>N° afiliado:<input type="number" name="afiliado" id="afiliado" class="form-control"></label><br>
+          <label>Diagnóstico: <input type="text" name="diagnostico" id="diagnostico" class="form-control"></label>
+        </div>
+  
+        <div class="col-2">
+          <label for="Fecha">Fecha:</label><input type="date" name="fecha" id="fecha" class="form-control-inline" >
+        </div>
+        <div class="col-2">
+          <label for="sesion">Sesión:</label><input type="sesion" name="sesion" class="form-control-inline" style="width: 80px" id="sesion" disabled >
+        </div>
+        <div class="col-3">
+          <label for="dias_internacion">Días de internación: </label><input type="date" name="internacion" id="internacion" class="form-control-inline" >
+        </div> 
+       -->
+      </div>
+    </div>
+  </div>
+  <!-- <div class="page">
+    <div class="content">
+      Third page in Portrait mode
+    </div>
+  </div> -->
+</body>
+</html>
