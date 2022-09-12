@@ -4,7 +4,7 @@
 } */
 div.portrait, div.landscape {
   margin: 10px auto;
-  padding: 10mm;
+  padding: 1mm;
   border: solid 1px black;
   overflow: hidden;
   page-break-after: always;

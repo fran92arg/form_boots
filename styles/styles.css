@@ -8,7 +8,6 @@
     text-align: center;
 }
 select.form-control{
-    color:red;
     text-align: center;
 }
 textarea{
@@ -39,10 +38,15 @@ td{
     justify-content: center;
     /* for vertical aligning */
     /* align-items: center; */
-    height: 175mm;
+    height: 180mm;
 
 }
-  
+.formulario{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0%;
+}
 /* .child-div {
     width:35%;
     height: 100%;
