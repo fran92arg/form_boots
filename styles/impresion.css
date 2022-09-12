@@ -5,7 +5,7 @@
 div.portrait, div.landscape {
   margin: 10px auto;
   padding: 1mm;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   overflow: hidden;
   page-break-after: always;
   background: white;
@@ -19,6 +19,12 @@ div.portrait {
 div.landscape {
   width: 276mm;
   height: 190mm;
+}
+body{
+  background-color:#e6fbf4;
+  /* #FCE7FA
+  #F0F4FF
+  #DBE5F1; */
 }
 /*
 I use 276mm instead of 277mm, because different browsers scale pages a little bit differently. So some of them will print 277mm-height content on two pages. The second page will be empty. It's more safe to use 276mm.
