@@ -1,8 +1,5 @@
-/* div{
-    border: 0.5px solid rebeccapurple;
-} */
 *{
-    font-size: 12px;
+    font-size: 3mm;
 }
 .checkbox{
     text-align: center;
@@ -14,32 +11,12 @@ textarea{
     resize: none;
     overflow: auto;
 }
-/* .col{
-    height: 80px;
-}
-.row{
-    margin: 0;
-} */
-/* #imagen{
-    height: 240px;
-} */
-.fila{
-    width: 276mm;
-    height: 40mm;
-}
+
 td{
-    height: 7mm;
+    height: 6mm;
 }
-
-.parent-div {
-    display: flex;
-    flex-wrap: wrap;
-    /* for horizontal aligning of child divs */
-    justify-content: center;
-    /* for vertical aligning */
-    /* align-items: center; */
-    height: 180mm;
-
+.proceso{
+    width: 20%;
 }
 .formulario{
     height: 100%;
@@ -47,16 +24,6 @@ td{
     padding: 0px;
     margin: 0%;
 }
-/* .child-div {
-    width:35%;
-    height: 100%;
-    display: inline-block;
-}
-.child-img{
-    width:29% ;
-    height: 100%;
-    display: inline-block;
-} */
-/* .primera{
-    height: 12mm;
+/* #signos{
+    border:0.5mm black solid;
 } */
