@@ -7,6 +7,9 @@
 .checkbox{
     text-align: center;
 }
+.col,.col-1,.col-3,.col-6{
+    padding-bottom: 1mm;
+}
 select.form-control{
     text-align: center;
 }
@@ -14,9 +17,9 @@ textarea{
     resize: none;
     overflow: auto;
 }
-/* .col{
-    height: 80px;
-}
+.col{
+    background-color: grey;
+}/*
 .row{
     margin: 0;
 } */
